@@ -12,14 +12,11 @@ namespace EntityLayer.Concrete
         [Key]
         public int ContactID { get; set; }
         [StringLength(50)]
-
         public string UserName { get; set; }
         [StringLength(100)]
-
         public string UserMail { get; set; }
 
         [StringLength(50)]
-
         public string Subject { get; set; }
         [StringLength(100)]
         public string Message { get; set; }
