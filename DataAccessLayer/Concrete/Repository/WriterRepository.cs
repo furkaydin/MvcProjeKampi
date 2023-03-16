@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.Repository
 {
-    public class CategoryRepository : GenericRepository<Category>,ICategoryDal
+    public class WriterRepository : GenericRepository<Writer>,IWriterDal
     {
-       
+      
     }
 }
