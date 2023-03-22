@@ -2,7 +2,7 @@
 @model List<Category>
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <h3>Mvc Kamp Tablo Örneği</h3>
@@ -15,7 +15,7 @@
         <th>Kategori Durumu</th>
         <th>İşlemler</th>
     </tr>
-    @foreach (var item in Model.Where(c=> c.CategoryStatus != false))
+    @foreach (var item in Model)
     {
         <tr>
             <td>@item.CategoryID</td>
@@ -26,6 +26,6 @@
         </tr>
     }
 </table>
-<button class="btn btn-success" style="margin-left:20px">Yeni Kategori</button>
+<a href="/Category/AddCategory" class="btn btn-info">Yeni Kategori</a>
 <button class="btn btn-warning">Kategori Listesi</button>
 <button class="btn btn-danger">Kategori Açıklamaları</button>
