@@ -67,12 +67,11 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult UpdateCategory(Category p)
         {
-            //cm.CategoryAdd(p);
             CategoryValidatior categoryValidatior = new CategoryValidatior(); // validator nesnesi oluşturuldu.
             ValidationResult results = categoryValidatior.Validate(p); // parametreden gelen p yi categoryValidatior nesnesindeki değerleri validate et.
             if (results.IsValid)
             {
-                cm.CategoryAddBL(p);
+                cm.CategoryUpdate(p);
                 return RedirectToAction("Index");
             }
             else
