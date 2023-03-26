@@ -12,6 +12,7 @@
         <th>Kategori Açıklama</th>
         <th>Kategori Durumu</th>
         <th>İşlemler</th>
+        <th>Başlıklar</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -20,8 +21,12 @@
             <td>@item.CategoryName</td>
             <td>@item.CategoryDescription</td>
             <td>@item.CategoryStatus</td>
-            <td><button class="btn btn-info">Güncelle</button></td>
+            <td><a href="#" class="btn btn-danger">Sil</a>
+            <a href="#" class="btn btn-info">Güncelle</a></td>
+           <td> <a href="#" class="btn btn-primary">Başlıklar</a></td>
         </tr>
     }
+    <td><a href="/AdminCategory/AddCategory" class="btn btn-success">Yeni kategori Ekle</a></td>
+
 </table>
 
