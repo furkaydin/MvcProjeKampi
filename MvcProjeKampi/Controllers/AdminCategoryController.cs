@@ -55,5 +55,35 @@ namespace MvcProjeKampi.Controllers
             cm.CategoryDelete(categoryvalue);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult UpdateCategory(int id)
+        {
+            var categoryvalue = cm.GetById(id);
+            return View(categoryvalue);
+
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCategory(Category p)
+        {
+            //cm.CategoryAdd(p);
+            CategoryValidatior categoryValidatior = new CategoryValidatior(); // validator nesnesi oluşturuldu.
+            ValidationResult results = categoryValidatior.Validate(p); // parametreden gelen p yi categoryValidatior nesnesindeki değerleri validate et.
+            if (results.IsValid)
+            {
+                cm.CategoryAddBL(p);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View(); // ekleme işlemi gerçekleştikten sonra "" içindeki metoda yönlendir.
+        }
     }
 }
