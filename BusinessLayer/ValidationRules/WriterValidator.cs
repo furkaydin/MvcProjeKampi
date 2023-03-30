@@ -14,7 +14,7 @@ namespace BusinessLayer.ValidationRules
         {
             RuleFor(x => x.WriterAbout).NotEmpty().WithMessage("Lütfen kendiniz hakkında birşeyler yazınız.");
             RuleFor(x => x.WriterMail).NotEmpty().WithMessage("Mail Adresinizi giriniz.");
-            RuleFor(x => x.WriterName).NotEmpty().MinimumLength(2).WithMessage("İsiminiz en az 3 harften oluşmalı.");
+            RuleFor(x => x.WriterName).NotEmpty().MinimumLength(3).WithMessage("İsiminiz en az 3 harften oluşmalı.");
         }
     }
 }
